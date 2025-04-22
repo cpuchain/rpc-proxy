@@ -1,6 +1,6 @@
 {
     "name": "rpc-proxy",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Reverse RPC Proxy for EVM chains",
     "license": "MIT",
     "author": "CPUchain",
@@ -14,7 +14,7 @@
         "types": "tsc -p tsconfig.types.json --declaration",
         "pkg": "pkg -d --no-native-build --no-signature --no-bytecode -c ./package.json ./lib/rpcProxy.js",
         "build": "yarn types && webpack && yarn pkg",
-        "start": "node --max-old-space-size=8192 lib/rpcProxy.js",
+        "start": "node --max-old-space-size=8192 lib/start.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "target": "node22",
