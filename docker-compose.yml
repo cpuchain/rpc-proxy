@@ -1,7 +1,7 @@
 services:
   proxy:
     container_name: proxy
-    image: cpuchain/rpc-proxy:1.0.1
+    image: cpuchain/rpc-proxy:1.0.2
     restart: always
     environment:
       - CONFIG_FILE=/config.json

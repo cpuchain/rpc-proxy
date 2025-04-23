@@ -1,6 +1,6 @@
 {
     "name": "rpc-proxy",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Reverse RPC Proxy for EVM chains",
     "license": "MIT",
     "author": "CPUchain",
