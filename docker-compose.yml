@@ -1,7 +1,7 @@
 services:
   proxy:
     container_name: proxy
-    image: cpuchain/rpc-proxy:1.0.2
+    image: ghcr.io/cpuchain/rpc-proxy:v1.0.3
     restart: always
     environment:
       - CONFIG_FILE=/config.json
