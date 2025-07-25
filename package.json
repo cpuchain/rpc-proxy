@@ -1,0 +1,82 @@
+{
+    "name": "rpc-proxy",
+    "private": true,
+    "version": "1.0.4",
+    "description": "Reverse RPC Proxy for EVM chains",
+    "license": "MIT",
+    "author": "CPUchain",
+    "type": "module",
+    "main": "./lib/index.cjs",
+    "module": "./lib/index.js",
+    "types": "./lib/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./lib/index.js",
+            "require": "./lib/index.cjs",
+            "default": "./lib/index.js"
+        }
+    },
+    "bin": "./lib/start.js",
+    "keywords": [
+        "cpuchain"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cpuchain/rpc-proxy.git"
+    },
+    "scripts": {
+        "lint": "eslint scripts/**/*.ts src/**/*.ts test/**/*.ts",
+        "build:pkg": "tsx ./scripts/pkgJson.ts",
+        "build:dist": "yarn build && pkg -d --no-native-build --no-signature --no-bytecode -c ./package.json ./lib/start.cjs",
+        "build": "yarn build:pkg && tsc -p tsconfig.types.json --noEmit && rollup -c",
+        "start": "node --max-old-space-size=8192 lib/start.js",
+        "docs:dev": "vitepress dev docs",
+        "docs:build": "vitepress build docs",
+        "docs:preview": "vitepress preview docs",
+        "test": "vitest && istanbul-badges-readme --colors=\"red:50,yellow:60\""
+    },
+    "target": "node22",
+    "pkg": {
+        "scripts": "./lib/start.cjs",
+        "assets": [
+            "lib",
+            "node_modules/@fastify/swagger-ui/static/**/*"
+        ],
+        "targets": [
+            "node22-linux-x64",
+            "node22-macos-x64",
+            "node22-win-x64"
+        ],
+        "outputPath": "."
+    },
+    "devDependencies": {
+        "@cpuchain/eslint": "^1.0.9",
+        "@cpuchain/rollup": "^1.0.4",
+        "@fastify/cors": "^11.0.1",
+        "@fastify/swagger": "^9.5.1",
+        "@fastify/swagger-ui": "^5.2.3",
+        "@fastify/websocket": "^11.2.0",
+        "@types/node": "^22.16.0",
+        "@types/ws": "^8.18.1",
+        "@vitest/coverage-v8": "^3.2.4",
+        "@yao-pkg/pkg": "^6.6.0",
+        "ajv": "^8.17.1",
+        "cross-env": "^7.0.3",
+        "dotenv": "^17.2.0",
+        "ethers": "^6.15.0",
+        "fastify": "^5.4.0",
+        "glob": "^11.0.3",
+        "isomorphic-ws": "^5.0.0",
+        "istanbul-badges-readme": "^1.9.0",
+        "logger-chain": "^1.0.3",
+        "ts-node": "^10.9.2",
+        "tsc": "^2.0.4",
+        "tsx": "^4.20.3",
+        "typescript": "^5.8.3",
+        "vitepress": "^1.6.3",
+        "vitest": "^3.2.4"
+    },
+    "resolutions": {
+        "fast-glob": ">=3.3.3"
+    }
+}

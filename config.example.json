@@ -1,0 +1,31 @@
+{
+    "host": "127.0.0.1",
+    "port": 8544,
+    "logLevel": "debug",
+    "reverseProxy": true,
+
+    "swaggerApi": "",
+
+    "redirect": "",
+
+    "healthyAge": 1800,
+
+    "interval": 60,
+    "ratelimit": 100,
+    "concurrency": 50,
+    "maxBodySize": 10485760,
+
+    "blockRefresh": 1,
+    "maxBlockRange": 10000,
+
+    "backends": [
+        {
+            "chain": "eth",
+            "url": "https://ethereum-rpc.publicnode.com",
+            "wsUrl": "wss://ethereum-rpc.publicnode.com",
+            "trace": true,
+            "filter": false,
+            "timeout": 600
+        }
+    ]
+}

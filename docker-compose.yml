@@ -1,0 +1,11 @@
+services:
+  proxy:
+    container_name: proxy
+    image: ghcr.io/cpuchain/rpc-proxy:v1.0.4
+    restart: always
+    environment:
+      - CONFIG_FILE=/config.json
+    volumes:
+      - './config.json:/config.json:ro'
+    ports:
+      - '127.0.0.1:8544:8544'

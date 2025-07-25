@@ -1,0 +1,14 @@
+node_modules
+.git
+
+# coverage
+coverage
+
+# vitepress
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+config*.json
+!config.example.json
+*.zip
+rpc-proxy-*
