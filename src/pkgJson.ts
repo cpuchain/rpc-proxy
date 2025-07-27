@@ -2,7 +2,7 @@
 export const pkgJson = {
     "name": "rpc-proxy",
     "private": true,
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Reverse RPC Proxy for EVM chains",
     "license": "MIT",
     "author": "CPUchain",
